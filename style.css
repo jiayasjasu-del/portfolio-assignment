@@ -1,0 +1,125 @@
+/* Basic setup */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #222222;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 20px;
+}
+
+/* Header and navigation */
+.header {
+  border-bottom: 1px solid #dddddd;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.logo {
+  color: #1d4ed8;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 8px;
+  color: #222222;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Introduction */
+.intro {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.role {
+  color: #1d4ed8;
+  font-weight: bold;
+}
+
+.button {
+  display: inline-block;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  padding: 10px 18px;
+  margin: 5px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #1e3a8a;
+}
+
+/* Sections */
+.grey {
+  background-color: #f5f7fa;
+}
+
+.section-heading {
+  color: #1d4ed8;
+  border-bottom: 2px solid #dddddd;
+  padding-bottom: 6px;
+}
+
+.project {
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-bottom: 12px;
+}
+
+.project h3,
+.project p {
+  margin: 4px 0;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  color: #666666;
+  border-top: 1px solid #dddddd;
+  padding: 10px;
+}
