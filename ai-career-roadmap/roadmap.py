@@ -70,9 +70,14 @@ Requirements:
 - Be specific, encouraging, and concise. Use free or commonly available learning tools where possible.
 """
     try:
-        client = genai.Client(api_key=key)
+        # Gemini 3.6 Flash responds faster for this short structured plan.
+        # A finite request timeout prevents the page from spinning indefinitely.
+        client = genai.Client(
+            api_key=key,
+            http_options=types.HttpOptions(timeout=90_000),
+        )
         response = client.models.generate_content(
-            model=os.getenv("GEMINI_MODEL", "gemini-3.8-flash"),
+            model=os.getenv("GEMINI_MODEL", "gemini-3.6-flash"),
             contents=prompt,
             config=types.GenerateContentConfig(response_mime_type="application/json", response_schema=CareerRoadmap, temperature=0.4),
         )
@@ -103,3 +108,4 @@ def make_report(profile: dict, roadmap: CareerRoadmap) -> str:
     for number, project in enumerate(roadmap.projects, start=1):
         lines.extend([f"{number}. {project.title}", project.description, f"Skills: {project.skills_used}", f"Deliverable: {project.deliverable}", ""])
     return "\n".join(lines)
+
